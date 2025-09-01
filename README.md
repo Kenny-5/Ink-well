@@ -1,12 +1,46 @@
-# React + Vite
+# 🔗 InkWell built using React + Vite + TailwindCSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+InkWell is a Medium-style blogging platform where users can create, edit, view, and delete posts, all stored locally using LocalStorage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. Clone the repository
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/your-username/inkwell.git
+cd inkwell
+
+npm install
+
+npm run dev
+
+Visit http://localhost:5173
+ in your browser to see the app.
+
+ 🛡️ Tech Stack
+
+⚛️ React — UI Library
+
+⚡ Vite — Fast build tool and dev server
+
+🎨 TailwindCSS — Utility-first CSS framework
+
+🗄️ LocalStorage — For storing posts and messages
+
+📝 React Markdown — Render Markdown in posts
+
+
+| Command           | Description                      |
+| ----------------- | -------------------------------- |
+| `npm install`     | Install project dependencies     |
+| `npm run dev`     | Start the development server     |
+| `npm run build`   | Build the project for production |
+| `npm run preview` | Preview the production build     |
+
+Check the live deployment here:
+https://inkwell.vercel.app
+ 
+ 📬 Feedback
+Feel free to open issues or pull requests for improvements!
