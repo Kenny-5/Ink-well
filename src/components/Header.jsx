@@ -1,48 +1,70 @@
+
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 
 export default function Header() {
-  return (
-    <header className="bg-[#FAFAFA] text-[#333333] shadow-md sticky top-0 z-50 border-b border-[#E5E5E5]">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-        
-        {/* logo*/}
-        <a href="/" className="flex items-center space-x-3">
-          <img 
-            src={logo} 
-            alt="InkWell Logo" 
-            className="h-16 w-auto object-contain" 
-          />
-          <span className="text-3xl font-bold tracking-wide">InkWell</span>
-        </a>
+  const navigate = useNavigate();
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-        {/* navigation */}
-        <nav className="space-x-10">
-          <a
-            href="/"
-            className="text-lg font-semibold text-[#666666] hover:text-[#333333] 
-                       hover:underline hover:decoration-[#666666] hover:decoration-2 
-                       hover:underline-offset-2 transition-all duration-200"
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser");
+    navigate("/Login");
+  };
+
+  return (
+    <header className="flex items-center justify-between px-6 py-4 bg-[var(--header)] shadow-md">
+      {/* Logo + Brand Name (always visible) */}
+      <div className="flex items-center space-x-3">
+        <img src={logo} alt="InkWell Logo" className="h-10 w-10 object-contain" />
+        <span
+          className="text-xl font-bold"
+          style={{ color: "var(--text-primary)", fontFamily: "var(--font-serif)" }}
+        >
+          InkWell
+        </span>
+      </div>
+
+      {/* Navigation (only when logged in) */}
+      {currentUser && (
+        <nav className="flex items-center space-x-6 font-sans">
+          <Link
+            to="/Home"
+            className="hover:underline"
+            style={{ color: "var(--text-primary)" }}
           >
             Home
-          </a>
-          <a
-            href="/new"
-            className="text-lg font-semibold text-[#666666] hover:text-[#333333] 
-                       hover:underline hover:decoration-[#666666] hover:decoration-2 
-                       hover:underline-offset-2 transition-all duration-200"
+          </Link>
+          <Link
+            to="/new-post"
+            className="hover:underline"
+            style={{ color: "var(--text-primary)" }}
           >
-            New Post
-          </a>
-          <a
-            href="/contact"
-            className="text-lg font-semibold text-[#666666] hover:text-[#333333] 
-                       hover:underline hover:decoration-[#666666] hover:decoration-2 
-                       hover:underline-offset-2 transition-all duration-200"
+            Create Post
+          </Link>
+          <Link
+            to="/my-posts"
+            className="hover:underline"
+            style={{ color: "var(--text-primary)" }}
           >
-            Contact
-          </a>
+            My Posts
+          </Link>
+          <Link
+            to="/membership"
+            className="hover:underline"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Membership
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="hover:underline"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Logout
+          </button>
         </nav>
-      </div>
+      )}
     </header>
   );
 }

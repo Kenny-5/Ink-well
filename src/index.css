@@ -1,2 +1,23 @@
 @import "tailwindcss";
 
+:root {
+  --background: #FFFFFF;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --header: #FAFAFA;
+  --footer: #F0F0F0;
+  --border: #E5E5E5;
+  --muted: #888888;
+  --accent: #666666;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}

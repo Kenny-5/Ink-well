@@ -40,7 +40,7 @@ Visit http://localhost:5173
 | `npm run preview` | Preview the production build     |
 
 Check the live deployment here:
-https://inkwell.vercel.app
+https://ink-well1.netlify.app/
  
  📬 Feedback
 Feel free to open issues or pull requests for improvements!
